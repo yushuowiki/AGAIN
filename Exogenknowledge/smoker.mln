@@ -1,0 +1,15 @@
+
+
+
+// predicate declarations
+Aa(person)
+Bb(person)
+Cc(person)
+Dd(person)
+Ee(person)
+
+// formulas
+0.000000    Aa(x) ^ !Bb(x)
+0.000000    Aa(x) ^ !Cc(x)
+0.000000    Aa(x) ^ !Dd(x)
+0.000000    Aa(x) ^ !Ee(x)

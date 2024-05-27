@@ -1,0 +1,9 @@
+data ###
+
+Aa(x)
+!Bb(x)
+Aa(x)
+!Cc(x)
+Aa(x)
+!Dd(x)
+Aa(x)
