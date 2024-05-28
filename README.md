@@ -12,5 +12,6 @@ For CBM:
 - scikit-learn 0.21.3
 - torch 1.1.0
 - torchvision 0.4.0
+
 For Factor Graph:
 - pracmln 1.2.2
