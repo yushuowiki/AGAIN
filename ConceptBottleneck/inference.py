@@ -1,5 +1,5 @@
 """
-Evaluate trained models on the official AGAIN test set
+Evaluate trained models on the official ConceptBottleneck test set
 """
 import os
 import sys
@@ -9,9 +9,9 @@ import argparse
 import numpy as np
 from sklearn.metrics import f1_score
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from AGAIN.models import ModelXtoC
-from AGAIN.dataset import load_data
-from AGAIN.config import BASE_DIR, N_CLASSES, N_ATTRIBUTES
+from ConceptBottleneck.models import ModelXtoC
+from ConceptBottleneck.dataset import load_data
+from ConceptBottleneck.config import BASE_DIR, N_CLASSES, N_ATTRIBUTES
 from analysis import AverageMeter, multiclass_metric, accuracy, binary_accuracy
 
 K = [1, 3, 5] #top k class accuracies to compute

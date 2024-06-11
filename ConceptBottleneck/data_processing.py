@@ -82,7 +82,7 @@ if __name__ == "__main__":
     parser.add_argument('-save_dir', '-d', help='Where to save the new datasets')
     # parser.add_argument('-data_dir', '-dd', help='Where to load the datasets')
     args = parser.parse_args()
-    data_dir = 'AGAIN/CUB_200_2011'
+    data_dir = 'ConceptBottleneck/CUB_200_2011'
     train_data, val_data, test_data = extract_data(data_dir)
 
     for dataset in ['train','val','test']:

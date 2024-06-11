@@ -3,7 +3,7 @@ import re
 import sys
 import datetime
 import subprocess
-from AGAIN.config import BASE_DIR
+from ConceptBottleneck.config import BASE_DIR
 
 
 def find_early_stop_epoch(log_file, patience):

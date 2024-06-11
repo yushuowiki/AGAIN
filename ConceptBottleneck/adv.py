@@ -187,7 +187,7 @@ if __name__ == '__main__':
     #loader = load_data([data_dir], use_attr, no_img, batch_size, image_dir= image_dir,
     #                  n_class_attr=n_class_attr)
 
-    # img_path = "AGAIN/CUB_200_2011/images/001.Black_footed_Albatross/Black_Footed_Albatross_0001_796111.jpg"
+    # img_path = "ConceptBottleneck/CUB_200_2011/images/001.Black_footed_Albatross/Black_Footed_Albatross_0001_796111.jpg"
     # img = Image.open(img_path).convert('RGB')
     #model = torch.load(model_dir)
     model = torch.load(model_dir)['model']
@@ -288,7 +288,7 @@ if __name__ == '__main__':
     #img_count = 0
     #vutils.save_image(result_images, './test.jpg', normalize=True)
     # for img in enumerate(result_images):
-    #     img.save('AGAIN/CUB_200_2011_adv_images/' + img_count + ".jpg")
+    #     img.save('ConceptBottleneck/CUB_200_2011_adv_images/' + img_count + ".jpg")
     #     img_count = img_count + 1
     # img = Image.fromarray((delta + inputs_images).detach())  # If image_data is a NumPy array
-    # img.save('AGAIN/CUB_200_2011_adv_images/' +i+".jpg")
+    # img.save('ConceptBottleneck/CUB_200_2011_adv_images/' +i+".jpg")

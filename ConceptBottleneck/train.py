@@ -1,5 +1,5 @@
 """
-Train InceptionV3 Network using the AGAIN-200-2011 dataset
+Train InceptionV3 Network using the ConceptBottleneck-200-2011 dataset
 """
 import pdb
 import os
@@ -10,8 +10,8 @@ import argparse
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from AGAIN.attrloss import logic_loss
-from AGAIN.timestamps import time_stamps
+from ConceptBottleneck.attrloss import logic_loss
+from ConceptBottleneck.timestamps import time_stamps
 
 
 from datetime import datetime
@@ -21,10 +21,10 @@ import numpy as np
 from analysis import Logger, AverageMeter, accuracy, binary_accuracy
 import torch.nn as nn
 
-from AGAIN import probe, tti, gen_cub_synthetic, hyperopt
-from AGAIN.dataset import load_data, find_class_imbalance
-from AGAIN.config import BASE_DIR, N_CLASSES, N_ATTRIBUTES, UPWEIGHT_RATIO, MIN_LR, LR_DECAY_SIZE
-from AGAIN.models import ModelXtoCY, ModelXtoChat_ChatToY, ModelXtoY, ModelXtoC, ModelOracleCtoY, ModelXtoCtoY
+from ConceptBottleneck import probe, tti, gen_cub_synthetic, hyperopt
+from ConceptBottleneck.dataset import load_data, find_class_imbalance
+from ConceptBottleneck.config import BASE_DIR, N_CLASSES, N_ATTRIBUTES, UPWEIGHT_RATIO, MIN_LR, LR_DECAY_SIZE
+from ConceptBottleneck.models import ModelXtoCY, ModelXtoChat_ChatToY, ModelXtoY, ModelXtoC, ModelOracleCtoY, ModelXtoCtoY
 
 
 def run_epoch_simple(model, optimizer, loader, loss_meter, acc_meter, criterion, args, is_training):
@@ -323,7 +323,7 @@ def hyperparameter_optimization(args):
 
 def parse_arguments(experiment):
     # Get argparse configs from user
-    parser = argparse.ArgumentParser(description='AGAIN Training')
+    parser = argparse.ArgumentParser(description='ConceptBottleneck Training')
     parser.add_argument('dataset', type=str, help='Name of the dataset.')
     parser.add_argument('exp', type=str,
                         choices=['Concept_XtoC', 'Independent_CtoY', 'Sequential_CtoY',

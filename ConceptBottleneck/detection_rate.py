@@ -120,7 +120,7 @@ if __name__ == '__main__':
     #loader = load_data([data_dir], use_attr, no_img, batch_size, image_dir= image_dir,
     #                  n_class_attr=n_class_attr)
 
-    # img_path = "AGAIN/CUB_200_2011/images/001.Black_footed_Albatross/Black_Footed_Albatross_0001_796111.jpg"
+    # img_path = "ConceptBottleneck/CUB_200_2011/images/001.Black_footed_Albatross/Black_Footed_Albatross_0001_796111.jpg"
     # img = Image.open(img_path).convert('RGB')
     #model = torch.load(model_dir)
     model = torch.load(model_dir)['model']

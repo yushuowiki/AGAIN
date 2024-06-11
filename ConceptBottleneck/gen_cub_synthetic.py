@@ -119,7 +119,7 @@ if __name__ == '__main__':
         description='Make segmentations',
         formatter_class=ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('--cub_dir', default='datasets/CUB_200_2011/', help='Path to AGAIN (should also contain segmentations folder)')
+    parser.add_argument('--cub_dir', default='datasets/CUB_200_2011/', help='Path to ConceptBottleneck (should also contain segmentations folder)')
     parser.add_argument('--places_dir', default='datasets/places365/', help='Path to Places365 dataset')
     parser.add_argument('--places_split', default='val_large', help='Which Places365 split to use (folder in --places_dir)')
     parser.add_argument('--places_file', default='places365_val.txt', help='Filepath to list of places images and classes (file in --places_dir)')

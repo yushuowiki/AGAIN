@@ -224,7 +224,7 @@ def assess_performance(y, yhat, names, prediction_type, prefix, verbose=False):
             # raise Exception("%s is a nan, something is weird about your predictor" % metric)
     return metrics
 
-# ---------------------- AGAIN ----------------------
+# ---------------------- ConceptBottleneck ----------------------
 class Logger(object):
     """
     Log results to a file and flush() to view instant updates

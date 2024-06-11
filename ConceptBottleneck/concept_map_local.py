@@ -81,10 +81,8 @@ def main(input_folder, output_csv,corr_csv):
 
     import matplotlib.pyplot as plt
 
-    # 绘制散点图
     plt.figure(figsize=(4, 4))
     plt.scatter(tenth_column[107], tenth_column[58], s=15, c='red')
-    # 添加标签和标题
     #plt.xlabel('association scores')
     #plt.ylabel('association scores')
     plt.xlim(-5, 105)  # x 轴刻度范围从 0 到 6

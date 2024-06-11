@@ -1,5 +1,5 @@
 """
-Create variants of the initial AGAIN dataset
+Create variants of the initial ConceptBottleneck dataset
 """
 import os
 import sys
@@ -295,7 +295,7 @@ def create_new_dataset(out_dir, field_change, compute_fn, datasets=['train', 'va
 
 def mask_image(file_path, out_dir_name, remove_bkgnd=True):
     """
-    Remove background or foreground (if remove_bkgnd is False) using segmentation label stored in segmentations/ folder in AGAIN dataset
+    Remove background or foreground (if remove_bkgnd is False) using segmentation label stored in segmentations/ folder in ConceptBottleneck dataset
     Save the masked image to the directory specified by out_dir_name
     """
     im = np.array(Image.open(file_path).convert('RGB'))

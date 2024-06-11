@@ -1,5 +1,5 @@
 
-from AGAIN.template_model import MLP, inception_v3, End2EndModel
+from ConceptBottleneck.template_model import MLP, inception_v3, End2EndModel
 
 
 # Independent & Sequential Model

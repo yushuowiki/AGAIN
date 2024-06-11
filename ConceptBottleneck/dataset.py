@@ -8,14 +8,14 @@ import numpy as np
 import torchvision.transforms as transforms
 
 from PIL import Image
-from AGAIN.config import BASE_DIR, N_ATTRIBUTES
+from ConceptBottleneck.config import BASE_DIR, N_ATTRIBUTES
 from torch.utils.data import BatchSampler
 from torch.utils.data import Dataset, DataLoader
 
 
 class CUBDataset(Dataset):
     """
-    Returns a compatible Torch Dataset object customized for the AGAIN dataset
+    Returns a compatible Torch Dataset object customized for the ConceptBottleneck dataset
     """
 
     def __init__(self, pkl_file_paths, use_attr, no_img, uncertain_label, image_dir, n_class_attr, transform=None):
@@ -59,7 +59,7 @@ class CUBDataset(Dataset):
                 img_path = img_path.replace('images/', '')
             else:
                 img_path = '/'.join(img_path.split('/')[idx:])
-            img_path = 'AGAIN/' + img_path # LYC
+            img_path = 'ConceptBottleneck/' + img_path # LYC
             img = Image.open(img_path).convert('RGB')
         except:
             img_path_split = img_path.split('/')

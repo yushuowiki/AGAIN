@@ -79,7 +79,7 @@ def main(input_folder, output_csv,corr_csv):
     print(cosine_similarity_matrix)
 
 if __name__ == "__main__":
-    input_folder = '/home/kang/lyc/ConceptBottleneck-master/AGAIN/attr_class'
+    input_folder = '/home/kang/lyc/ConceptBottleneck-master/ConceptBottleneck/attr_class'
     output_csv = 'concept_map.csv'
     corr_csv = 'CUB_corr.csv'
     main(input_folder, output_csv,corr_csv)
