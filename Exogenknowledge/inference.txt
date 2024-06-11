@@ -1,6 +1,0 @@
-Aa(x) ^ !Bb(x)
-Aa(x) ^ !Cc(x)
-Aa(x) ^ !Dd(x)
-Aa(x) ^ Ee(x)
-Aa(x) ^ Ff(x)
-Aa(x) ^ Gg(x)

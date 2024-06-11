@@ -1,19 +1,4 @@
 
 
 
-// predicate declarations
-Aa(person)
-Bb(person)
-Cc(person)
-Dd(person)
-Ee(person)
-Ff(person)
-Gg(person)
 
-// formulas
--14.735709  Aa(x) ^ !Bb(x)
-11.970575   Aa(x) ^ !Cc(x)
-11.970575   Aa(x) ^ !Dd(x)
-11.970575   Aa(x) ^ Ee(x)
-11.970575   Aa(x) ^ Ff(x)
--14.735709  Aa(x) ^ Gg(x)

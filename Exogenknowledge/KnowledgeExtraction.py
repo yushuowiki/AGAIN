@@ -26,7 +26,7 @@ output_idx start = 0
 def building_class_knowledge(classidx_list):
     knowledge = []
     for classidx in classidx_list:
-        with open("AGAIN/attr_class/" + str(classidx) + ".txt", 'r') as file:
+        with open("ConceptBottleneck/attr_class/" + str(classidx) + ".txt", 'r') as file:
             lines = file.readlines()
             for line in lines:
                 attr = line.split()
