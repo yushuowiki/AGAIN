@@ -10,7 +10,6 @@ from scipy.stats import pearsonr, spearmanr
 from sklearn.metrics import mean_squared_error, precision_recall_fscore_support, accuracy_score, precision_score, recall_score, balanced_accuracy_score, classification_report
 
 
-# ---------------------- OAI ----------------------
 def plot(x, y, **kw):
     if kw.get('multiple_plots'):
         # MANY lines on MANY plots
