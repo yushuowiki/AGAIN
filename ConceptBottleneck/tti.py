@@ -8,9 +8,9 @@ import random
 from scipy.stats import entropy
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
-from AGAIN.inference import *
-from AGAIN.config import N_CLASSES, N_ATTRIBUTES
-from AGAIN.utils import get_class_attribute_names
+from ConceptBottleneck.inference import *
+from ConceptBottleneck.config import N_CLASSES, N_ATTRIBUTES
+from ConceptBottleneck.utils import get_class_attribute_names
 
 
 def get_stage2_pred(a_hat):
