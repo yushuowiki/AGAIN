@@ -42,13 +42,10 @@ def process_txt_file(file_path):
     return numbers
 
 def main(input_folder, output_csv,corr_csv):
-    # 主函数，遍历文件夹中的txt文件，提取数字并写入CSV文件
     all_numbers = []
     #file_names = []
 
 
-
-    # 写入CSV文件
     with open(output_csv, 'w', newline='', encoding='utf-8') as csv_file:
         csv_writer = csv.writer(csv_file)
         #csv_writer.writerow(['File Name'] + [f'Line {i+1}' for i in range(len(all_numbers)//len(file_names))])
@@ -61,13 +58,10 @@ def main(input_folder, output_csv,corr_csv):
                 all_numbers.append(numbers)
 
             #row_data = [file_names[i]] + all_numbers[i::len(file_names)]
-    # 假设你有一个二维列表 vectors，表示向量集合
 
-    # 将二维列表转换为NumPy数组
     vectors_array = np.array(all_numbers)
     vectors_array = vectors_array.astype(float)
     tn = torch.from_numpy(vectors_array)
-    # 计算余弦相似度矩阵
     tnT = tn.T
     cosine_similarity_matrix = torch.nn.functional.cosine_similarity(tnT.unsqueeze(1), tnT.unsqueeze(0), dim=-1)
     cosine_similarity_matrix = cosine_similarity_matrix.tolist()
@@ -75,7 +69,7 @@ def main(input_folder, output_csv,corr_csv):
         csv_writer = csv.writer(csv_file2)
         for x in cosine_similarity_matrix:
             csv_writer.writerow(x)
-    # 打印余弦相似度矩阵
+
     print(cosine_similarity_matrix)
 
 if __name__ == "__main__":
