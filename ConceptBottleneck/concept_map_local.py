@@ -40,13 +40,11 @@ def process_txt_file(file_path):
     return numbers
 
 def main(input_folder, output_csv,corr_csv):
-    # 主函数，遍历文件夹中的txt文件，提取数字并写入CSV文件
     all_numbers = []
     #file_names = []
 
 
 
-    # 写入CSV文件
     with open(output_csv, 'w', newline='', encoding='utf-8') as csv_file:
         csv_writer = csv.writer(csv_file)
         #csv_writer.writerow(['File Name'] + [f'Line {i+1}' for i in range(len(all_numbers)//len(file_names))])
@@ -74,7 +72,7 @@ def main(input_folder, output_csv,corr_csv):
         tenth_column.append(tenth_column_temp)
         #tenth_column_34 = [row[10] for row in vectors_array]
 
-    cosine_similarity_matrix = np.zeros((112, 112))  # 创建一个全零的矩阵用于存储相似度
+    cosine_similarity_matrix = np.zeros((112, 112))  
     for i in range(112):
         for j in range(112):
             cosine_similarity_matrix[i, j] = np.corrcoef(tenth_column[i], tenth_column[j])[0, 1]
@@ -85,15 +83,14 @@ def main(input_folder, output_csv,corr_csv):
     plt.scatter(tenth_column[107], tenth_column[58], s=15, c='red')
     #plt.xlabel('association scores')
     #plt.ylabel('association scores')
-    plt.xlim(-5, 105)  # x 轴刻度范围从 0 到 6
+    plt.xlim(-5, 105)  
     plt.ylim(-5, 105)
-    plt.savefig('E:\\学习文件\\work1知识集成\\2024NIPS\\corr-img-point\\12.svg')
     plt.show()
     #print(cosine_similarity_matrix)
     #print(np.sum(cosine_similarity_matrix < 0))
     np.savetxt('cosine_similarity_matrix.csv', cosine_similarity_matrix, delimiter=',')
 if __name__ == "__main__":
-    input_folder = 'E:\\python_workspace\\ConceptBottleneck-master\\CUB_200_2011\\attr_class'
+    input_folder = 'ConceptBottleneck-master\\CUB_200_2011\\attr_class'
     output_csv = 'concept_map.csv'
     corr_csv = 'CUB_corr.csv'
     main(input_folder, output_csv,corr_csv)
