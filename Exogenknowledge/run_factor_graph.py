@@ -11,7 +11,7 @@ from pracmln import MLN, Database, query
 
 class modelling():
 
-    def read_data(paths, predicate):  # 读txt数据用
+    def read_data(paths, predicate):  
         content = []
         base_path = os.getcwd()
         file = open(base_path + '/' + paths, 'r', encoding='utf8')
@@ -26,12 +26,9 @@ class modelling():
             for j in element[1::]:
                 splited = j.split('(')
                 content.append((element[0], splited[0] + '(' + splited[1].upper()))
-                # pracmln 要求 证据数据库db中的格式為 Predicate(CONTANT_1), 即谓语首字及谓语内
-                # 变量contant首字為大写, 还有不可以有空格. 这里单纯方便而把变量大写
-                # 另外暂不支持中文输入.
         return content
 
-    def read_formula(paths, predicate):  # 读取命题公式
+    def read_formula(paths, predicate):  
         predicate_list = [x.split('(')[0] for x in predicate]
         predicate_list = predicate_list + ['!' + x for x in predicate_list]
         predicate_list = [' ' + x for x in predicate_list]
@@ -43,21 +40,20 @@ class modelling():
         formula = formula.split('\n')
         formula = [x for x in formula if x != '']
         formula = [' ' + x.replace(' or ', ' v ').replace(' and ', ' ^ ').replace(':', '') for x in
-                   formula]  # 将逻辑替换为代码关键字
+                   formula]  
         # exist_list = [x for x in formula if 'Exists ' in x]
         formula = ['0 ' + x for x in formula if 'Exists ' not in x]
-        # 笔者仍在探索量词逻辑的使用
-        # 加0 的作用是表示formula的权重, 这里先一律定义為0
+
         return formula
 
-    def read_predicate(paths):  # 读取谓词
+    def read_predicate(paths): 
         predicate = []
         base_path = os.getcwd()
         file = open(base_path + '/' + paths, 'r', encoding='utf8')
         predicate = file.read()
         predicate = predicate.split('\n')
         predicate_list = [x.split('(')[0] for x in
-                          predicate]  # ['foo(1,2)', 'bar()', 'baz(3)'] 表达式将返回 ['foo', 'bar', 'baz']
+                          predicate]  
         predicate_list2 = [x.split('(')[1].replace(' ', '').lower() for x in predicate]
         predicate = []
         for i in zip(predicate_list, predicate_list2):
@@ -85,7 +81,7 @@ class modelling():
                 db << j[1]
 
         db.write()
-        db.tofile(base_path + '/' + db_path)  # 把证据数据储存成 db_path.db 档案
+        db.tofile(base_path + '/' + db_path)  
         return (db, mln)
 
     def activate_model(database, mln):
@@ -113,7 +109,6 @@ class modelling():
         config['use_initial_weights'] = 0
         config['use_prior'] = 0
         # config['output_filename'] = 'learnt.dbpll_cg.student-new-train-student-new-2.mln'
-        # 亲测无效, 此句没法储存.mln 档案
         config['infoInterval'] = 500
         config['resultsInterval'] = 1000
         conf.update(config)
@@ -139,7 +134,6 @@ class modelling():
     def inference_str(string, result, data, mln):
         print(query(queries=string, method='EnumerationAsk', mln=mln, db=data, verbose=True, multicore=False, save=True,
                     output_filename=r'learnt.dbpll_cg.student-new-train-student-new-2.mln').run().results)
-        # save = True, output_filename=r'learnt.dbpll_cg.student-new-train-student-new-2.mln' 无效
 
 
 
