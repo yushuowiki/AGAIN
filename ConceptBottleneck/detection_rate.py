@@ -70,7 +70,7 @@ def pgd_attack_random(model, inputs_images, attr_labels, eps=1, alpha=1, iters=4
     inputs_images = inputs_images.to(device)
 
     if randomize:
-        delta = torch.rand_like(inputs_images, requires_grad=True).to(device)  # 生成随机数并创建与输入张量具有相同形状的张量的函数
+        delta = torch.rand_like(inputs_images, requires_grad=True).to(device)  
         delta.data = delta.data * 2 * eps - eps
         delta.data = (delta.data + inputs_images).clamp(-0.5, 0.5) - (inputs_images)  # range[-0.5 - 0.5]
     else:
