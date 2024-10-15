@@ -1,0 +1,7 @@
+person(a)
+person(b)
+person(c)
+
+0.5 friends(a,b)
+0.5 friends(b,c)
+0.2 enemy(a,c)
